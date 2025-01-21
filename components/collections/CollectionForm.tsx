@@ -24,7 +24,7 @@ import Delete from "../custom ui/Delete";
 import { Trash } from "lucide-react";
 
 const formSchema = z.object({
-  title: z.string().min(2).max(20),
+  title: z.string().min(2).max(200),
   description: z.string().min(2).max(500).trim(),
   image: z.string(),
 });
