@@ -9,11 +9,10 @@ import { usePathname } from "next/navigation";
 const LeftSideBar = () => {
   const pathname = usePathname();
   return (
-    <div className="h-screen left-0 top-0 sticky p-10 flex flex-col gap-16 bg-blue-2 shadow-xl max-lg:hidden">
+    <div className="h-screen left-0 top-0 sticky p-10 flex flex-col gap-16 bg-mizou shadow-xl max-lg:hidden">
       <Link href="/dashboard">
         <div className="flex items-center gap-4">
-          <Image src="/logo.png" alt="Logo" width={50} height={50} />
-          <p className="text-3xl font-bold text-sky-700">Mizou</p>
+          <Image src="/logo.png" alt="Logo" width={150} height={150} />
         </div>
       </Link>
       <div className="flex flex-col gap-12 mt-[-20px]">

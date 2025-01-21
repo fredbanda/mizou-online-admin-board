@@ -13,11 +13,9 @@ export const TopBar = () => {
   const pathname = usePathname();
   
   return (
-    <div className="sticky top-0 z-20 w-full flex justify-between items-center bg-blue-2 px-8 py-4 b-blue-2 shadow-xl lg:hidden">
+    <div className="sticky top-0 z-20 w-full flex justify-between items-center bg-mizou px-8 py-4 b-blue-2 shadow-xl lg:hidden">
         <Link href="/dashboard">
           <div className="flex items-center gap-4">
-            <Image src="/logo.png" alt="Logo" width={50} height={50} />
-            <p className="text-3xl font-bold text-sky-700">Mizou</p>
           </div>
         </Link>
       <div className="flex gap-8 max-md:hidden">
@@ -37,7 +35,7 @@ export const TopBar = () => {
           onClick={() => setDropdownMenu(!dropdownMenu)}
         />
         {dropdownMenu && (
-          <div className="absolute top-10 right-6 flex flex-col gap-8 p-5 bg-blue-2 shadow-xl rounded-lg ">
+          <div className="absolute top-10 right-6 flex flex-col gap-8 p-5 bg-mizou shadow-xl rounded-lg ">
             {navLinks.map((link) => (
               <Link
                 key={link.url}
