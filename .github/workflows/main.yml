@@ -1,4 +1,4 @@
-on:
+on: 
     push:
       branches:
         - master
@@ -10,28 +10,28 @@ on:
       name: 🎉 Deploy
       runs-on: ubuntu-latest
       steps:
-        - name: 🚚 Get latest code
-          uses: actions/checkout@v4
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v4
   
-        - name: 🏗️ Use Node.js 22.11.0
-          uses: actions/setup-node@v2
-          with:
-            node-version: '22.11.0'
-  
-        - name: 🔨 Build Project
-          run: |
-            npm install
-            npm run build
-  
-        - name: 📂 Sync files via FTP
-          uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-          with:
-            server: ${{ secrets.FTP_SERVER }}
-            username: ${{ secrets.FTP_USERNAME }}
-            password: ${{ secrets.FTP_PASSWORD }}
-            server-dir: /mizou-dashboard.invisiguard.co.za/public_html/ # Adjust as needed
-            exclude: |
-              **/.git*
-              **/.git*/**
-              **/node_modules/**
-            force: true  # Ensures a full re-upload
+      - name: Use Node.js 22.11.0
+        uses: actions/setup-node@v2
+        with:
+          node-version: '22.11.0'
+        
+      - name: 🔨 Build Project
+        run: |
+          npm install
+          npm run build
+      
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /mizou-dashboard.invisiguard.co.za/public_html
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+          force: true  # Ensure a full re-upload
