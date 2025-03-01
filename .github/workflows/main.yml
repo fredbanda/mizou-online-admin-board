@@ -29,7 +29,7 @@ on:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /mizou-dashboard.invisiguard.co.za/public_html
+          server-dir: /mizou-dashboard.invisiguard.co.za/public_html/
           exclude: |
             **/.git*
             **/.git*/**
