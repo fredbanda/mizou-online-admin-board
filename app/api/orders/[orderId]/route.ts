@@ -2,8 +2,10 @@ import Customer from "@/lib/models/Customer";
 import Order from "@/lib/models/Order";
 import Product from "@/lib/models/Product";
 import { connectToDB } from "@/lib/mongoDB";
+// biome-ignore lint/style/useImportType: <explanation>
 import { NextRequest, NextResponse } from "next/server";
 
+// biome-ignore lint/complexity/noBannedTypes: <explanation>
 export const GET = async (req: NextRequest, { params }: { params: { orderId: String }}) => {
   try {
     await connectToDB()
